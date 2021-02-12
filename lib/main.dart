@@ -40,10 +40,8 @@ class _DicePageState extends State<DicePage> {
         Row(
           children: [
             Expanded(
-              child: FlatButton(
-                onPressed: () {
-                  Roll();
-                },
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Image.asset('images/dice$left.png'),
               ),
             ),
@@ -51,15 +49,25 @@ class _DicePageState extends State<DicePage> {
             //   width: 10,
             // ),
             Expanded(
-              child: FlatButton(
-                onPressed: () {
-                  Roll();
-                },
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Image.asset('images/dice$right.png'),
               ),
             ),
           ],
         ),
+        MaterialButton(
+          onPressed: () {
+            Roll();
+          },
+          child: Text(
+            'Roll',
+            style: TextStyle(color: Colors.red, fontSize: 30),
+          ),
+          height: 40,
+          minWidth: 120,
+          color: Colors.grey[800],
+        )
       ],
     );
   }
